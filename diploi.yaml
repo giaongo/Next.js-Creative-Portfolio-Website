@@ -1,0 +1,22 @@
+# This file is used to build the infrastructure for a deployment.
+# After editing something here, apply the changes on the Diploi dashboard.
+# For more information, see https://diploi.com/yaml
+
+diploiVersion: v1.0
+components:
+  - hosts:
+      - port: 3000
+        endpoint: true
+        name: App
+        identifier: app
+    name: Next.js
+    identifier: next
+    folder: /
+    package: https://github.com/diploi/component-nextjs#v16.1.2-ports
+    env:
+      include:
+        - value: https://github-readme-stats.vercel.app
+          name: NEXT_PUBLIC_GITHUB_STATS_URL
+        - value: https://github-readme-streak-stats.herokuapp.com
+          name: NEXT_PUBLIC_GITHUB_STREAK_STATS_URL
+addons: []
