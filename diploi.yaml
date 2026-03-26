@@ -13,6 +13,8 @@ components:
     identifier: next
     folder: /
     package: https://github.com/diploi/component-nextjs#v16.1.2-ports
+    containerCommands:
+      productionStart: npm start
     env:
       include:
         - value: https://github-readme-stats.vercel.app
