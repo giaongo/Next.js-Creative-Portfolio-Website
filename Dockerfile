@@ -68,8 +68,7 @@ ENV NODE_ENV=development
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
-COPY --from=builder --chown=1000:1000 ${FOLDER}/.next/standalone ${FOLDER}
-COPY --from=builder --chown=1000:1000 ${FOLDER}/.next/static ${FOLDER}/.next/static
+COPY --from=builder ${FOLDER}/.next ${FOLDER}/.next
 
 USER 1000:1000
 
